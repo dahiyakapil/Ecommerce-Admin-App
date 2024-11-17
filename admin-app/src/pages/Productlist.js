@@ -1,5 +1,8 @@
 import React from "react";
 import { Table } from "antd";
+import { biEdit } from "react-icons/bi";
+import { AiFillDelete } from "react-icons/ai";
+
 const Productlist = () => {
   const columns = [
     {
@@ -33,7 +36,7 @@ const Productlist = () => {
     <>
       <div>
         <div className="mt-4">
-          <h3 className="mb-4">Products</h3>
+          <h3 className="mb-4 title">Products</h3>
           <div>
             <Table columns={columns} dataSource={data1} />
           </div>

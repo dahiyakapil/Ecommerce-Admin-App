@@ -33,7 +33,7 @@ const Brandlist = () => {
     <>
       <div>
         <div className="mt-4">
-          <h3 className="mb-4">Brands</h3>
+          <h3 className="mb-4 title">Brands</h3>
           <div>
             <Table columns={columns} dataSource={data1} />
           </div>

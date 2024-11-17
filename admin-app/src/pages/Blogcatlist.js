@@ -31,7 +31,7 @@ const Blogcatlist = () => {
   return (
     <>
       <div>
-        <div className="mt-4">
+        <div className="mt-4 title">
           <h3 className="mb-4">Blogs Categories</h3>
           <div>
             <Table columns={columns} dataSource={data1} />

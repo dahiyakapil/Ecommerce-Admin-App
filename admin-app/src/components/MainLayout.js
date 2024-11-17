@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   AiOutlineDashboard,
   AiOutlineShoppingCart,
@@ -168,7 +168,7 @@ const MainLayout = () => {
               </span>
             </div>
 
-            <div className="d-flex gap-3 align-items-center">
+            <div className="d-flex gap-3 align-items-center dropdown">
               <div>
                 <img
                   width={32}
@@ -177,9 +177,31 @@ const MainLayout = () => {
                   alt=""
                 />
               </div>
-              <div>
+              <div
+                
+                role="button"
+                id="dropdownMenuLink"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 <h5 className="mb-0">Kapil</h5>
                 <p className="mb-0">kapildahiya309@gmail.com</p>
+              </div>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="DropdownMenuLink"
+              >
+                <li>
+                  <Link className="dropdown-item py-1 mb-1" style={{height:"auto", lineHeight:"20px"}} to="/">
+                    VIew Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item py-1 mb-1" style={{height:"auto", lineHeight:"20px"}} to="/">
+                    Signout
+                  </Link>
+                </li>
+                
               </div>
             </div>
           </div>
