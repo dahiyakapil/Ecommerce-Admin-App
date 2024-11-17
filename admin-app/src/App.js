@@ -5,6 +5,15 @@ import ResetPassword from "./pages/ResetPassword";
 import ForgotPassword from "./pages/ForgotPassword";
 import MainLayout from "./components/MainLayout";
 import Dashboard from "./pages/Dashboard";
+import Enquiries from "./pages/Enquiries";
+import BlogList from "./pages/BlogList";
+import Blogcatlist from "./pages/Blogcatlist";
+import Orders from "./pages/Orders";
+import Customers from "./pages/Customers";
+import Colorlist from "./pages/Colorlist";
+import Categorylist from "./pages/Categorylist";
+import Brandlist from "./pages/Brandlist";
+import Productlist from "./pages/Productlist";
 
 function App() {
   return (
@@ -15,6 +24,17 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/admin" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
+          <Route path="enquiries" element={<Enquiries />} />
+          <Route path="blog-list" element={<BlogList />} />
+          <Route path="blog-category-list" element={<Blogcatlist />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="customers" element={<Customers />} />
+          <Route path="list-color" element={<Colorlist />} />
+          <Route path="list-color" element={<Colorlist />} />
+          <Route path="list-category" element={<Categorylist />} />
+          <Route path="list-brand" element={<Brandlist />} />
+          <Route path="list-product" element={<Productlist />} />
+
         </Route>
       </Routes>
     </Router>

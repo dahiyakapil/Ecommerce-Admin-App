@@ -7,11 +7,15 @@ import {
   AiOutlineShoppingCart,
   AiOutlineUser,
   AiOutlineBgColors,
+  AiOutlinePicLeft,
+  AiOutlinePicRight,
 } from "react-icons/ai";
 import { SiBrandfolder } from "react-icons/si";
 import { BiCategoryAlt } from "react-icons/bi";
 import { FaClipboardList, FaBloggerB } from "react-icons/fa";
 import { ImBlog } from "react-icons/im";
+import { Outlet } from "react-router-dom";
+import { IoIosNotifications } from "react-icons/io";
 
 const { Header, Sider, Content } = Layout;
 
@@ -65,7 +69,7 @@ const MainLayout = () => {
                   label: "Add Product",
                 },
                 {
-                  key: "product-list",
+                  key: "list-product",
                   icon: <AiOutlineShoppingCart />,
                   label: "Product List",
                 },
@@ -77,7 +81,7 @@ const MainLayout = () => {
                 {
                   key: "list-brand",
                   icon: <SiBrandfolder className="fs-4" />,
-                  label: "Brand",
+                  label: "Brand List",
                 },
                 {
                   key: "category",
@@ -102,7 +106,7 @@ const MainLayout = () => {
               ],
             },
             {
-              key: "order",
+              key: "orders",
               icon: <FaClipboardList className="fs-4" />,
               label: "Orders",
             },
@@ -127,22 +131,25 @@ const MainLayout = () => {
                   label: "Add Blog Category",
                 },
                 {
-                  key: "enquiries",
+                  key: "blog-category-list",
                   icon: <FaBloggerB className="fs-4" />,
-                  label: "Enquiries",
+                  label: "Blog Category List",
                 },
               ],
             },
             {
-              key: "order",
-              icon: <FaClipboardList className="fs-4" />,
-              label: "Orders",
+              key: "enquiries",
+              icon: <FaBloggerB className="fs-4" />,
+              label: "Enquiries",
             },
           ]}
         />
       </Sider>
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }}>
+        <Header
+          className="d-flex justify-content-between ps-2 pe-5"
+          style={{ padding: 0, background: colorBgContainer }}
+        >
           <Button
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -153,7 +160,29 @@ const MainLayout = () => {
               height: 64,
             }}
           />
+          <div className="d-flex gap-4 align-items-center">
+            <div className="position-relative">
+              <IoIosNotifications className="fs-4" />
+              <span className="badge bg-warning rounded-circle p-1 position-absolute">
+                3
+              </span>
+            </div>
 
+            <div className="d-flex gap-3 align-items-center">
+              <div>
+                <img
+                  width={32}
+                  height={32}
+                  src="https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h5 className="mb-0">Kapil</h5>
+                <p className="mb-0">kapildahiya309@gmail.com</p>
+              </div>
+            </div>
+          </div>
         </Header>
         <Content
           style={{
@@ -164,6 +193,7 @@ const MainLayout = () => {
             borderRadius: borderRadiusLG,
           }}
         >
+          <Outlet />
         </Content>
       </Layout>
     </Layout>
